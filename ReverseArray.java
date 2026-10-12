@@ -1,0 +1,25 @@
+
+public class ReverseArray {
+
+    public static void reverseArray(int[] arr) {
+        int first = 0, last = arr.length - 1;
+        while (first < last) {
+            // Swap the first and last values
+            int temp = arr[first];
+            arr[first] = arr[last];
+            arr[last] = temp;
+            first++;
+            last--;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        reverseArray(arr);
+        // output in the array
+        for (int value : arr) {
+            System.out.print(value + " ");
+        }
+    }
+
+}
