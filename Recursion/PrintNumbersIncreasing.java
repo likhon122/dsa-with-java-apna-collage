@@ -1,18 +1,16 @@
 package Recursion;
 
-public class PrintNumbersDecreasing {
+public class PrintNumbersIncreasing {
 
-    public static void printNumDec(int num){
-
-        if(num > 10){
+    public static void printNumInc(int num){
+        if(num < 0){
             return;
         }
+        printNumInc(num-1);
         System.out.print(num + " ");
-        printNumDec(num+1);
-
     }
 
     static void main(String[] args) {
-        printNumDec(0);
+        printNumInc(10);
     }
 }
