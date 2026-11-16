@@ -74,6 +74,25 @@ public class NQueens { // Time complexity O(n!)
         return count;
     }
 
+    // Print just first possible solution
+    static boolean printFirstNQueen(char[][] board, int row){
+        if(row == board.length){
+            return true;
+        }
+
+        for (int j = 0; j < board.length; j++){
+            if(isSafe(board,row,j)){
+                board[row][j] = 'Q';
+                if (printFirstNQueen(board, row + 1)) {
+                    return true;
+                }
+                board[row][j] = 'x';
+            }
+        }
+
+        return false;
+    }
+
     // Print board
     static void printBoard(char[][] board){
         System.out.println("============== Safe To place ============");
@@ -85,14 +104,21 @@ public class NQueens { // Time complexity O(n!)
         }
     }
 
+
     static void main(String[] args) {
-      int n = 5;
+      int n = 4;
       char[][] board = new char[n][n];
 
       for (char[] chars : board){
           Arrays.fill(chars,'x');
       }
 
-        System.out.println(nQueensCount(board,0));
+//        System.out.println(nQueensCount(board,0));
+        if(printFirstNQueen(board,0)){
+            System.out.println("Solution possible");
+            printBoard(board);
+        }else {
+            System.out.println("Solution is not possible.");
+        }
     }
 }
