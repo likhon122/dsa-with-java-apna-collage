@@ -12,7 +12,7 @@ public class Inheritance {
 
 
 // Parent class/ Base Class
-class Animal{
+class Animal2{
     String color;
 
     void eat(){
@@ -26,7 +26,7 @@ class Animal{
 
 
 // Child/ Derived Class
-class Fish extends Animal{
+class Fish2 extends Animal2{
     int fins;
     void swim(){
         System.out.println("Swims..");

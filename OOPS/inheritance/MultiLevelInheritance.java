@@ -12,7 +12,7 @@ public class MultiLevelInheritance {
 
 
 // Parent class/ Base Class
-class Animal{
+class Animal3{
     String color;
 
     void eat(){
@@ -26,11 +26,11 @@ class Animal{
 
 
 // Derived class of Parent Animal class
-class Mammal extends Animal{
+class Mammal3 extends Animal3{
     int legs;
 }
 
 // Derived class of derived class Mammal
-class Dog extends Mammal{
+class Dog extends Mammal3{
     String bread;
 }
